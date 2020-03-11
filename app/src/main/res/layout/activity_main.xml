@@ -1,15 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.tm.demo.swiprefreshlayout.MySwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/swipe_refresh_layout">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.MainActivity">
 
-    <ListView
-        android:id="@+id/lv"
+    <!--    scroll 表示向下滚动时,这个View会被滚出屏幕范围直到隐藏.-->
+    <!--    enterAlways 表示向上滚动时,这个View会随着滚动手势出现,直到恢复原来的位置.-->
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
 
-</com.tm.demo.swiprefreshlayout.MySwipeRefreshLayout>
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            app:title="我是标题"
+            app:titleTextColor="#fff"
+            android:id="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:background="@color/colorPrimary"
+            android:layout_height="50dp">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <com.tm.demo.swiprefreshlayout.MySwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity"
+        android:id="@+id/swipe_refresh_layout"
+        android:visibility="visible">
+
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.tm.demo.swiprefreshlayout.MySwipeRefreshLayout>
+
+<!--    appbar_scrolling_view_behavior对 NestedScrollView ，Recycler好用-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_launcher_background"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

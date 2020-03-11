@@ -7,8 +7,18 @@
         android:title="setting"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_go_activity_2"
+        android:id="@+id/action_go_activity_listview"
         android:orderInCategory="1"
-        android:title="Main2Activity"
+        android:title="ListViewActivity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_go_activity_lfrecycler"
+        android:orderInCategory="1"
+        android:title="LFRecyclerActivity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_go_activity_recycler_listener"
+        android:orderInCategory="1"
+        android:title="RecyclerListenerActivity"
         app:showAsAction="never" />
 </menu>

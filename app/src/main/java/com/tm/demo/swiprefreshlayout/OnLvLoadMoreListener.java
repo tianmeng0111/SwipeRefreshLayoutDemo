@@ -13,8 +13,8 @@ import android.widget.ListView;
  * @说明：加载更多接口
  */
 
-public abstract class OnLoadMoreListener implements ListView.OnScrollListener {
-    private static final String TAG = "OnLoadMoreListener";
+public abstract class OnLvLoadMoreListener implements ListView.OnScrollListener {
+    private static final String TAG = "OnLvLoadMoreListener";
 
     private int countItem;
     private int lastItem;

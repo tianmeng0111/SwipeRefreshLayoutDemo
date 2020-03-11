@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe_refresh_layout"
-    tools:context=".Main2Activity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.LvListenerActivity">
 
-    <ListView
-        android:id="@+id/lv"
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_refresh_layout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</android.support.v4.widget.SwipeRefreshLayout>
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:title="ListViewListenerActivity"
+            app:titleTextColor="#fff"
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="17dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:text="副标题"/>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

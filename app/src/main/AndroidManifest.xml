@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Main2Activity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.LFRecyclerActivity"></activity>
+        <activity android:name=".activity.RecyclerListenerActivity"></activity>
+        <activity android:name=".activity.LvListenerActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

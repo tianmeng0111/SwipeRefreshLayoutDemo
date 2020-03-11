@@ -1,4 +1,4 @@
-package com.tm.demo.swiprefreshlayout;
+package com.tm.demo.swiprefreshlayout.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,13 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.tm.demo.swiprefreshlayout.OnLvLoadMoreListener;
+import com.tm.demo.swiprefreshlayout.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MyAdapter2 extends BaseAdapter {
 
     private Context context;
-    private OnLoadMoreListener listener;
+    private OnLvLoadMoreListener listener;
 
     private int count = 0;
 
@@ -22,7 +25,7 @@ public class MyAdapter2 extends BaseAdapter {
 
     private boolean canLoadMore = true;
 
-    public MyAdapter2(Context context, OnLoadMoreListener listener) {
+    public MyAdapter2(Context context, OnLvLoadMoreListener listener) {
         this.context = context;
         this.listener = listener;
     }
@@ -99,6 +102,10 @@ public class MyAdapter2 extends BaseAdapter {
 
     public void setNoMoreData() {
         this.canLoadMore = false;
+        notifyDataSetChanged();
+    }
+    public void setRefreshReset() {
+        this.canLoadMore = true;
         notifyDataSetChanged();
     }
 }
