@@ -18,7 +18,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.tm.demo.swiprefreshlayout.DensityUtils;
 import com.tm.demo.swiprefreshlayout.adapter.MyAdapter2;
@@ -157,6 +159,12 @@ public class LvListenerActivity extends AppCompatActivity {
             }
         });
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), position + "", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void toolbarAnim(int type) {
